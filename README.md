@@ -46,7 +46,7 @@ There are URLs of container
 	- Javascript
 	- Webpack
 - Backend (3 Layers and Domain Driven Design - Controller - Service - Model)
-	- NodeJS
+	- NodeJS with ES6+
 	- Sequelize (ORM + migration + seed)
 	- PostgreSQL
 	- Webpack, Babel, ESLint (Build, Hot-Reload, Transpile, Coding Standard)
