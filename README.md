@@ -41,16 +41,19 @@ There are URLs of container
 
 ---
 **Architecture & Technologies:**
-- Frontend
+- Frontend (Pages component / Pure components & functions -- for testablility)
 	- React
 	- Javascript
 	- Webpack
-- Backend
+- Backend (3 Layers and Domain Driven Design - Controller - Service - Model)
 	- NodeJS
-	- Sequelize (ORM + migration)
+	- Sequelize (ORM + migration + seed)
 	- PostgreSQL
-	- Webpack, Babel, ESLint (Build, Hot-Reload, Transpile, CodeStandard)
+	- Webpack, Babel, ESLint (Build, Hot-Reload, Transpile, Coding Standard)
 - Misc
 	- Docker (Images, Containers for CICD)
 	- Jest: Unit testing
     - DOTENV - config injection with JENKINS or CICD pipeline
+- Future improvements
+    - Jest & Enzyme
+    - Supertest
