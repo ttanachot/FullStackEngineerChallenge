@@ -1,22 +1,35 @@
 FullStackEngineerChallenge:
 -
 This is the web-application for employee performance review.
+
 The original repo is [Pay-Baymax/FullStackEngineerChallenge](https://github.com/Pay-Baymax/FullStackEngineerChallenge)
 
-You need to install Docker.
-`docker-compose up`
+You need to install Docker first on your machine.
+`cd FullStackEngineerChallenge`
+then `docker-compose up`
+
 There are URLs of container
 - Frontend: `localhost:7001`
-	- `/` : login page
-	- `/profile` : Employee profile page
-	- `/topic/:id/review` : Employee review page by topic e.g. `2019 End Year Review`
+	- `/`
+		- login page
+		- 	Provide 3 accounts for login (employee10 - 12)
+			- username: `employee10@test.com`
+			- password: `employee10`
+	- `/profile`
+		- Employee profile page
+		- List of `topic` to review
+	- `/topic/:id/review`
+		- Employee review page by topic e.g. `2019 End Year Review`
+		- Add review by each employee
+		- See detail of reviewed employee
+		- - Seed data for login
 - Backend: `localhost:7000`
 - Database: `localhost:7010`
 	- username: `api`
 	- password: `api`
 	- schema: `db`
 ---
-**API Spec:**
+**API Specification:**
 
     POST: /login
     - body: { username, password }
@@ -45,15 +58,16 @@ There are URLs of container
 	- React
 	- Javascript
 	- Webpack
-- Backend (3 Layers and Domain Driven Design - Controller - Service - Model)
+- Backend (3 Layers & Domain Driven Design - Controller - Service - Model)
 	- NodeJS with ES6+
-	- Sequelize (ORM + migration + seed)
+	- Sequelize (ORM Rails like + migration + seed + raw query)
 	- PostgreSQL
-	- Webpack, Babel, ESLint (Build, Hot-Reload, Transpile, Coding Standard)
+	- Webpack, Nodemon, Babel, ESLint (Build, Hot-Reload, Transpile, CodeStandard)
 - Misc
 	- Docker (Images, Containers for CICD)
 	- Jest: Unit testing
-    - DOTENV - config injection with JENKINS or CICD pipeline
+	- DOTENV - config injection with JENKINS or CICD pipeline
 - Future improvements
-    - Jest & Enzyme
-    - Supertest
+	- Jest & Enzyme
+	- Supertest
+	- SCSS
