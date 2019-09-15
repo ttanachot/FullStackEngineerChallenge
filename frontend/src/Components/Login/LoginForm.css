@@ -1,0 +1,7 @@
+.LoginForm {
+  border-radius: 10px;
+  border: 1px solid lightgray !important;
+  padding: 20px !important;
+  max-width: 500px;
+  width: 100%;
+}

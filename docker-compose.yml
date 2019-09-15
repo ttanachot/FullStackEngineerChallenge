@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend
+    command: bash  -c 'npm install && npm run dev'
+    image: backend-service
+    volumes:
+      - './backend:/usr/src/app'
+    ports:
+      - '7000:7000'
+    networks:
+      - backend
+    depends_on:
+      - backend-db
+  backend-db:
+    image: postgres:9.6
+    volumes:
+      - 'postgres-backend-db:/var/lib/postgresql/data/pgdata'
+    ports:
+      - '7010:5432'
+    networks:
+      - backend
+    environment:
+      PGDATA: '/var/lib/postgresql/data/pgdata'
+      POSTGRES_USER: 'api'
+      POSTGRES_PASSWORD: 'api'
+      POSTGRES_DB: 'db'
+  frontend:
+    build: ./frontend
+    command: bash -c 'npm install && npm run start'
+    image: frontend-service
+    volumes:
+      - "./frontend/src:/usr/src/app/src"
+      - "./frontend/scripts:/usr/src/app/scripts"
+      - "./frontend/public:/usr/src/app/public"
+      - "./frontend/config:/usr/src/app/config"
+      - "./frontend/build:/usr/src/app/build"
+      - "./frontend/package.json:/usr/src/app/package.json"
+      - "./frontend/package-lock.json:/usr/src/app/package-lock.json"
+    ports:
+      - '7001:3000'
+volumes:
+  postgres-backend-db:
+networks:
+  backend:
