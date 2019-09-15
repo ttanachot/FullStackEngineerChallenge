@@ -53,3 +53,4 @@ There are URLs of container
 - Misc
 	- Docker (Images, Containers for CICD)
 	- Jest: Unit testing
+    - DOTENV - config injection with JENKINS or CICD pipeline
